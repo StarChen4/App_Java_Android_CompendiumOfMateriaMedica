@@ -20,9 +20,9 @@ public class Post implements Comparable<Post>{
     private String content;
     private String timestamp;
     // user id who liked this post
-    private List<Integer> likes;
+/*    private List<Integer> likes;
     private List<Integer> likesRecord;
-    private Map<Integer, String> comments;
+    private Map<Integer, String> comments;*/
 
     public Post(){}
 
@@ -33,9 +33,9 @@ public class Post implements Comparable<Post>{
         this.photo_url = photo;
         this.content = content;
         this.timestamp = timestamp;
-        this.likes = new ArrayList<>();
+/*        this.likes = new ArrayList<>();
         this.likesRecord = new ArrayList<>();
-        this.comments = new LinkedHashMap<>();
+        this.comments = new LinkedHashMap<>();*/
     }
     public Post(int postId, int uid, int plantId, String photo, String content, String timestamp, List<Integer> likes, List<Integer> likesRecord, Map<Integer, String> comments){
         this.post_id = postId;
@@ -44,9 +44,9 @@ public class Post implements Comparable<Post>{
         this.photo_url = photo;
         this.content = content;
         this.timestamp = timestamp;
-        this.likes = likes;
+/*        this.likes = likes;
         this.likesRecord = likesRecord;
-        this.comments = comments;
+        this.comments = comments;*/
     }
 
     public int getPost_id() {
@@ -73,7 +73,7 @@ public class Post implements Comparable<Post>{
         return timestamp;
     }
 
-    public List<Integer> getLikes() { return likes; }
+/*    public List<Integer> getLikes() { return likes; }
 
     public List<Integer> getLikesRecord() { return likesRecord; }
 
@@ -102,7 +102,7 @@ public class Post implements Comparable<Post>{
             }
             // 如果以前被他点赞过，说明他是取消了再点的,不用做处理
         }
-    }
+    }*/
 
     @Override
     public int compareTo(Post post) {
@@ -117,8 +117,8 @@ public class Post implements Comparable<Post>{
                 + "PlantID: " + plant_id + ", "
                 + "PhotoUrl: " + photo_url + ", "
                 + "Content: " + content + ", "
-                + "Time: " + timestamp + ", "
-                + "Likes: " + likes.toString() + ", "
-                + "Comments: " + comments.toString() + "}";
+                + "Time: " + timestamp + ", ";
+   /*             + "Likes: " + likes.toString() + ", "
+                + "Comments: " + comments.toString() + "}";*/
     }
 }

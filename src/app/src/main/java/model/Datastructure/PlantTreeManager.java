@@ -61,7 +61,7 @@ public class PlantTreeManager implements TreeManager<Plant>{
         // 如果当前节点的值与搜索的值相等，加入结果列表
         switch (infoType) {
             case COMMON_NAME:
-                if (node.getValue().getCommonName().contains((CharSequence) info)) {
+                if (node.getValue().getCommon_name().contains((CharSequence) info)) {
                     plants.add(node);
                 }
             case SLUG:
@@ -69,7 +69,7 @@ public class PlantTreeManager implements TreeManager<Plant>{
                     plants.add(node);
                 }
             case SCIENTIFIC_NAME:
-                if (node.getValue().getScientificName().contains((CharSequence) info)) {
+                if (node.getValue().getScientific_name().contains((CharSequence) info)) {
                     plants.add(node);
                 }
             case GENUS:

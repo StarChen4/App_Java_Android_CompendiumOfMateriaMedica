@@ -48,9 +48,9 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.GridViewHolder
     public void onBindViewHolder(@NonNull GridViewHolder holder, int position) {
         ArrayList<RBTreeNode<Plant>> nodes = PlantTreeManager.instance.search(PlantTreeManager.PlantInfoType.ID, String.valueOf(data.get(position)));
         Log.println(Log.ASSERT, "DEBUG", "[GridAdapter] onBindViewHolder: nodes size " + nodes.size());
-        String plantURL = nodes.get(0).getValue().getImage();
+        String plantURL = nodes.get(0).getValue().getImage_url();
         MainActivity.loadImageFromURL(this.context, plantURL, holder.plantImage, "Photo");
-        String plantName = nodes.get(0).getValue().getCommonName();
+        String plantName = nodes.get(0).getValue().getCommon_name();
         String plantFamily = nodes.get(0).getValue().getFamily();
         holder.postContent.setText(plantName);
         holder.plantSubheading.setText(plantFamily);

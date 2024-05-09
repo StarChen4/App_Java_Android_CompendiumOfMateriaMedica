@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @description: 数据处理+树的生成器接口
  **/
 public interface TreeGenerator<T> {
-    RBTree<T> generateTree(ArrayList<JSONObject> arrayList);
+    RBTree<T> generateTree(ArrayList<T> arrayList);
 }
 
 

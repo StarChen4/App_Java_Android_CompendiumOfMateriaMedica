@@ -64,9 +64,9 @@ public class PlantDetailShow extends AppCompatActivity {
         RBTreeNode<Plant> node = plants.get(0);
         Plant plant = node.getValue();
 
-        commonName.setText(plant.getCommonName());
+        commonName.setText(plant.getCommon_name());
         slug.setText(plant.getSlug());
-        scientificName.setText(plant.getScientificName());
+        scientificName.setText(plant.getScientific_name());
         genus.setText(plant.getGenus());
         family.setText(plant.getFamily());
         description.setText(plant.getDescription());

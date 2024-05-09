@@ -22,47 +22,36 @@ public class PostTreeGenerator implements TreeGenerator<Post>{
     }
 
     @Override
-    public RBTree<Post> generateTree(ArrayList<JSONObject> arrayList) {
-        for(JSONObject jsonObject : arrayList){
-            try {
-                int postId = jsonObject.getInt("post_id");
-                int uid = jsonObject.getInt("user_id");
-                int plantId = jsonObject.getInt("plant_id");
-                String photo = jsonObject.getString("photo_url");
-                String content = jsonObject.getString("content");
-                String timestamp = jsonObject.getString("timestamp");
+    public RBTree<Post> generateTree(ArrayList<Post> arrayList) {
+        for(Post post : arrayList){
 
-                // 解析 likes
-                List<Integer> likes = new ArrayList<>();
-                JSONArray likesArray = jsonObject.getJSONArray("likes");
-                for (int i = 0; i < likesArray.length(); i++) {
-                    likes.add(likesArray.getInt(i));
-                }
+//            // 解析 likes
+//            List<Integer> likes = new ArrayList<>();
+//            JSONArray likesArray = jsonObject.getJSONArray("likes");
+//            for (int i = 0; i < likesArray.length(); i++) {
+//                likes.add(likesArray.getInt(i));
+//            }
+//
+//            // 解析 likesRecord
+//            List<Integer> likesRecord = new ArrayList<>();
+//            JSONArray likesRecordArray = jsonObject.getJSONArray("likesRecord");
+//            for (int i = 0; i < likesRecordArray.length(); i++) {
+//                likesRecord.add(likesRecordArray.getInt(i));
+//            }
+//
+//            // 解析 comments
+//            Map<Integer, String> comments = new LinkedHashMap<>();
+//            JSONObject commentsObject = jsonObject.getJSONObject("comments");
+//            Iterator<String> keys = commentsObject.keys();
+//            while (keys.hasNext()) {
+//                String key = keys.next();
+//                String value = commentsObject.getString(key);
+//                comments.put(Integer.parseInt(key), value);
+//            }
 
-                // 解析 likesRecord
-                List<Integer> likesRecord = new ArrayList<>();
-                JSONArray likesRecordArray = jsonObject.getJSONArray("likesRecord");
-                for (int i = 0; i < likesRecordArray.length(); i++) {
-                    likesRecord.add(likesRecordArray.getInt(i));
-                }
+            // 设置post id 作key
+            postRBTree.insert(post.getPost_id(), post);
 
-                // 解析 comments
-                Map<Integer, String> comments = new LinkedHashMap<>();
-                JSONObject commentsObject = jsonObject.getJSONObject("comments");
-                Iterator<String> keys = commentsObject.keys();
-                while (keys.hasNext()) {
-                    String key = keys.next();
-                    String value = commentsObject.getString(key);
-                    comments.put(Integer.parseInt(key), value);
-                }
-
-                // 创建并插入节点
-                Post post = new Post(postId,uid,plantId,photo,content,timestamp,likes,likesRecord,comments);
-                // 设置post id 作key
-                postRBTree.insert(postId, post);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
         }
         return postRBTree;
     }

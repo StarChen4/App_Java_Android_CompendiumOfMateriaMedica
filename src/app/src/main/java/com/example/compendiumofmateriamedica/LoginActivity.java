@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,6 +22,8 @@ import org.json.JSONException;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import model.Datastructure.DataType;
 import model.Datastructure.Plant;
@@ -62,14 +65,29 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+//        ExecutorService executor = Executors.newSingleThreadExecutor();
+//        executor.submit(() -> {
+//            Log.i("哈哈哈哈", "h哈哈哈哈哈啊");
+//            // 执行耗时操作
+//            DataInitial();
+//            performTimeConsumingOperation();
+//            //Log.i("user", userTree.toString());
+//
+//            // 这里可以使用 runOnUiThread 来更新UI，如果需要
+//            runOnUiThread(() -> {
+//                // 更新UI操作
+//            });
+//        });
+//        executor.shutdown();
+
+
+
         // 运行加载数据的函数
-        try {
-            DataInitial();
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        DataInitial();
+
+        //Log.i("user", userTree.toString());
+
         // 创建user，post和plant的管理类的全局单例
         userTreeManager = UserTreeManager.getInstance(userTree);
         postTreeManager = PostTreeManager.getInstance(postTree);
@@ -158,9 +176,84 @@ public class LoginActivity extends AppCompatActivity {
      * @author: Haochen Gong
      * 加载数据
      */
-    private void DataInitial() throws JSONException, IOException {
-        userTree = (RBTree<User>) GeneratorFactory.tree(this, DataType.USER, R.raw.users);
-        plantTree = (RBTree<Plant>) GeneratorFactory.tree(this, DataType.PLANT, R.raw.plants);
-        postTree = (RBTree<Post>) GeneratorFactory.tree(this, DataType.POST, R.raw.posts);
+    private void DataInitial(){
+//        userTree = (RBTree<User>) GeneratorFactory.tree(this, DataType.USER, R.raw.users);
+//        plantTree = (RBTree<Plant>) GeneratorFactory.tree(this, DataType.PLANT, R.raw.plants);
+//        postTree = (RBTree<Post>) GeneratorFactory.tree(this, DataType.POST, R.raw.posts);
+
+        DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("users");
+        DatabaseReference plantsRef = FirebaseDatabase.getInstance().getReference("plants");
+        DatabaseReference postsRef = FirebaseDatabase.getInstance().getReference("posts");
+
+        usersRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ArrayList<User> users = new ArrayList<>();
+                for (DataSnapshot snapShot : snapshot.getChildren()) {
+                    User user = snapShot.getValue(User.class);
+                    users.add(user);
+                    //Log.i("user", user.toString());
+                }
+
+                userTree = (RBTree<User>) GeneratorFactory.tree(users, DataType.USER);
+                Log.i("post", userTree.toString());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                System.err.println("Error loading users: " + error.getMessage());
+            }
+        });
+
+
+        plantsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ArrayList<Plant> plants = new ArrayList<>();
+                for (DataSnapshot snapShot : snapshot.getChildren()) {
+                    Plant plant = snapShot.getValue(Plant.class);
+                    plants.add(plant);
+                    //Log.i("plant", plant.toString());
+                }
+                plantTree = (RBTree<Plant>) GeneratorFactory.tree(plants, DataType.PLANT);
+                Log.i("plant", plantTree.toString());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                System.err.println("Error loading plants: " + error.getMessage());
+            }
+        });
+
+
+        postsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ArrayList<Post> posts = new ArrayList<>();
+                for (DataSnapshot snapShot : snapshot.getChildren()) {
+                    //Log.i("______", snapShot.getKey());
+                    Post post = snapShot.getValue(Post.class);
+                    posts.add(post);
+                    //Log.i("post", post.toString());
+                }
+                postTree = (RBTree<Post>) GeneratorFactory.tree(posts, DataType.POST);
+                Log.i("post", postTree.toString());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                System.err.println("Error loading posts: " + error.getMessage());
+            }
+        });
     }
+
+    private void performTimeConsumingOperation() {
+        // 模拟耗时操作
+        try {
+            Thread.sleep(2000); // 模拟操作耗时
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
