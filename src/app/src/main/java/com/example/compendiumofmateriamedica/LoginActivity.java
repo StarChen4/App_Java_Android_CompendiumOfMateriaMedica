@@ -17,11 +17,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import org.json.JSONException;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -176,12 +179,12 @@ public class LoginActivity extends AppCompatActivity {
      * @author: Haochen Gong
      * 加载数据
      */
-    private void DataInitial(){
+    private void DataInitial() {
 //        userTree = (RBTree<User>) GeneratorFactory.tree(this, DataType.USER, R.raw.users);
 //        plantTree = (RBTree<Plant>) GeneratorFactory.tree(this, DataType.PLANT, R.raw.plants);
 //        postTree = (RBTree<Post>) GeneratorFactory.tree(this, DataType.POST, R.raw.posts);
 
-        DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("users");
+       /* DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("users");
         DatabaseReference plantsRef = FirebaseDatabase.getInstance().getReference("plants");
         DatabaseReference postsRef = FirebaseDatabase.getInstance().getReference("posts");
 
@@ -254,6 +257,73 @@ public class LoginActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }*/
+
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("posts").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                ArrayList<Post> posts = new ArrayList<>();
+                for (QueryDocumentSnapshot document : task.getResult()) {
+                    posts.add(document.toObject(Post.class));
+                }
+                // 在这里，posts列表已经包含了从Firestore读取的所有Post对象
+                // 可以在这里处理这些数据，如更新UI、保存到本地等
+                postTree = (RBTree<Post>) GeneratorFactory.tree(posts, DataType.POST);
+                Log.i("post", postTree.toString());
+
+            } else {
+                Log.w("Firestore", "Error getting documents.", task.getException());
+            }
+        });
+
+        db.collection("users").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                ArrayList<User> users = new ArrayList<>();
+                for (QueryDocumentSnapshot document : task.getResult()) {
+                    users.add(document.toObject(User.class));
+                }
+                // 在这里，posts列表已经包含了从Firestore读取的所有Post对象
+                // 可以在这里处理这些数据，如更新UI、保存到本地等
+                userTree = (RBTree<User>) GeneratorFactory.tree(users, DataType.USER);
+                Log.i("post", userTree.toString());
+
+            } else {
+                Log.w("Firestore", "Error getting documents.", task.getException());
+            }
+        });
+
+        db.collection("plants").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                ArrayList<Plant> plants = new ArrayList<>();
+                for (QueryDocumentSnapshot document : task.getResult()) {
+                    plants.add(document.toObject(Plant.class));
+                }
+                // 在这里，posts列表已经包含了从Firestore读取的所有Post对象
+                // 可以在这里处理这些数据，如更新UI、保存到本地等
+                plantTree = (RBTree<Plant>) GeneratorFactory.tree(plants, DataType.PLANT);
+                Log.i("post", plantTree.toString());
+
+            } else {
+                Log.w("Firestore", "Error getting documents.", task.getException());
+            }
+        });
     }
 
+
+    public void readDataFromFirestore() {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("posts").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                List<Post> posts = new ArrayList<>();
+                for (QueryDocumentSnapshot document : task.getResult()) {
+                    posts.add(document.toObject(Post.class));
+                }
+                // 在这里，posts列表已经包含了从Firestore读取的所有Post对象
+                // 可以在这里处理这些数据，如更新UI、保存到本地等
+            } else {
+                Log.w("Firestore", "Error getting documents.", task.getException());
+            }
+        });
+    }
 }
