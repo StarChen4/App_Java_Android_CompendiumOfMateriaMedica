@@ -1,4 +1,4 @@
-package model;
+package model.Firebase;
 
 import android.content.Context;
 import android.util.Log;

@@ -8,26 +8,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
-import org.json.JSONException;
-
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import model.Datastructure.DataType;
 import model.Datastructure.Plant;
@@ -38,7 +28,7 @@ import model.Datastructure.RBTree;
 import model.Datastructure.RBTreeNode;
 import model.Datastructure.User;
 import model.Datastructure.UserTreeManager;
-import model.FirebaseAuthManager;
+import model.Firebase.FirebaseAuthManager;
 import model.GeneratorFactory;
 
 /**
@@ -188,7 +178,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loadPosts() {
-        db.collection("posts").get().addOnCompleteListener(task -> {
+        db.collection("posts2").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 ArrayList<Post> posts = new ArrayList<>();
                 for (QueryDocumentSnapshot document : task.getResult()) {

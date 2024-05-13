@@ -1,6 +1,4 @@
-package model;
-
-import android.app.Activity;
+package model.Firebase;
 
 import com.google.firebase.auth.FirebaseAuth;
 

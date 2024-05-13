@@ -97,7 +97,7 @@
             <!-- </intent-filter> -->
         </activity>
         <activity
-            android:name="model.FirebaseActivity"
+            android:name="model.Firebase.FirebaseActivity"
             android:exported="false"
             android:label="@string/app_name">
 
