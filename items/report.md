@@ -37,13 +37,13 @@ Note that you should have removed ALL TEMPLATE/INSTRUCTION textes in your submis
 ## Team Members and Roles
 The key area(s) of responsibilities for each member
 
-| UID   |      Name      |                              Role |
-|:------|:--------------:|----------------------------------:|
-| [u7709429] | [Tianhao Shan] |                              [UI] |
-| [u7776634] | [Haochen Gong] |                  [Data structure] |
-| [u7755061] |  [Yusi Zhong]  | [Data prepare] |
-| [u7733037] |     [Hongjun Xu]     |                          [Search] |
-| [u7725171] |     [Xing Chen]     |                            [User Interactivity ] |
+| UID   |      Name      |                  Role |
+|:------|:--------------:|----------------------:|
+| [u7709429] | [Tianhao Shan] |                  [UI] |
+| [u7776634] | [Haochen Gong] |      [Data structure] |
+| [u7755061] |  [Yusi Zhong]  |        [Data prepare] |
+| [u7733037] |     [Hongjun Xu]     |              [Search] |
+| [u7725171] |     [Xing Chen]     | [User Interactivity ] |
 
 
 ## Summary of Individual Contributions
@@ -65,17 +65,35 @@ Note that the core criteria of contribution is based on `code contribution` (the
 
 1. **u7709429, Tianhao Shan**  I have 20% contribution, as follows: <br>
 - **Code Contribution in the final App**
-    - Feature A1, A2, A3 - class Dummy: [Dummy.java](https://gitlab.cecs.anu.edu.au/comp2100/group-project/ga-23s2/-/blob/main/items/media/_examples/Dummy.java)
-    - XYZ Design Pattern -  class AnotherClass: [functionOne()](https://gitlab.cecs.anu.edu.au/comp2100/group-project/ga-23s2/-/blob/main/items/media/_examples/Dummy.java#L22-43), [function2()](the-URL)
-    - ... (any other contribution in the code, including UI and data files) ... [Student class](../src/path/to/class/Student.java), ..., etc.*, [LanguageTranslator class](../src/path/to/class/LanguageTranslator.java): function1(), function2(), ... <br><br>
+    - Feature [LogIn] - class LoginActivity: [LoginActivity.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/LoginActivity.java)
+    - Feature [Data-Profile] - class ProfileFragment: [ProfileFragment.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/ui/profile/ProfileFragment.java)
+    - Splash Activity - class SplashActivity: [SplashActivity.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/SplashActivity.java)
+    - Encapsulating Utils Methods - class UtilsApp:  [UtilsApp.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/UtilsApp.java)
+    - Encapsulating Mutable Live Data - class ProfileViewModel.java [ProfileViewModel.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/ui/profile/ProfileViewModel.java)
+    - Simple Frontend Development - class MainActivity: [MainActivity.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/MainActivity.java) - class MyPost: [MyPost.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/ui/profile/MyPost.java)
 
+    <br>
 - **Code and App Design**
-    - [What design patterns, data structures, did the involved member propose?]*
-    - [UI Design. Specify what design did the involved member propose? What tools were used for the design?]* <br><br>
+    - Code refactoring: 
+        - Refactoring of partial Java code, to improve the quality, extensibility of the codebase while preserving its functionality and compatibility with existing systems the code by the way of:
+            1. Code Cleanup: Removing unused variables, imports, and dead code to improve readability and reduce clutter.
+            2. Improving Code Structure: Reorganizing classes, methods, and files to follow better design patterns and coding conventions.
+            3. Enhancing Comments and Documentation: Adding or improving comments to explain logic and algorithms, making the code easier to understand for other team members.
+            4. Simplifying Complex Code: Breaking down long methods or classes into smaller, more manageable components to improve readability and maintainability.
+      
+        - Layout adjustment of all pages, to make the application more visually appealing, intuitive, and user-friendly by the way of:
+            1. Justifying components: Changing the position, size and color of the components.
+            2. Adding missing components: The 'back button' and some other reasonable components for each page and the jump logic behind them.
+        
+    - UI Design:
+        - The UI Design of our application is divided into 5 sections: Social, Search, Profile, Item Description, and Login. I am responsible for Login and Profile section:
+            1. Login section contains 'splash' and 'login' pages.
+            2. Profile section contains the pages of 'user profile', 'list of discovered plants', 'list of posts', 'list of messages', 'privacy policy' and 'about us'.
 
-- **Others**: (only if significant and significantly different from an "average contribution")
-    - [Report Writing?] [Slides preparation?]*
-    - [You are welcome to provide anything that you consider as a contribution to the project or team.] e.g., APK, setups, firebase* <br><br>
+       <br>
+
+- **Others**:
+    - Slides preparation <br><br>
 
 2. **u7776634, Haochen Gong**  I have 20% contribution, as follows: <br>
 
@@ -95,7 +113,7 @@ Note that the core criteria of contribution is based on `code contribution` (the
     - <br><br>
 
 - **Others**:
-    - Report writing: *
+    - Video making, Report writing
     <br><br>
 
 3. **u7755061, Yusi Zhong**  I have 20% contribution, as follows: <br>
@@ -356,10 +374,10 @@ Additionally, when users post threads, we similarly tokenize their textual input
 *List all features you have completed in their separate categories with their featureId. THe features must be one of the basic/custom features, or an approved feature from Voice Four Feature.*
 
 ### Basic Features
-1. [LogIn]. Description of the feature ... (easy)
-    * Code: [Class X, methods Z, Y](https://gitlab.cecs.anu.edu.au/comp2100/group-project/ga-23s2/-/blob/main/items/media/_examples/Dummy.java#L22-43) and Class Y, ...
-    * Description of feature: ... <br>
-    * Description of your implementation: ... <br>
+1. [LogIn]. Users must be able to log in (not necessarily sign up).  (easy)
+    * Code: class LoginActivity: [LoginActivity.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/LoginActivity.java)
+    * This page is for user to log into the application.
+    * The page will prompt the user to enter the email and password in the corresponding input area, and then the data obtained will be compared with the data inside the RB tree structure for all users' information, prompting "Login successful" if the data is matched and entry into the app with passing the information of the current user, or prompting the user to "Invalid email or password" if the data is not matched.
 
 2. [DataFiles]. Create at least 2500 valid data instances. (easy)
     * Code to the Data File [posts.json](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/res/raw/posts.json), [plants.json](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/res/raw/plants.json), [users.json](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/res/raw/users.json), [posts_stream.json](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/res/raw/posts_stream.json)
