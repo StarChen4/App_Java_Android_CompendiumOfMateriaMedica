@@ -284,6 +284,14 @@ Note that the core criteria of contribution is based on `code contribution` (the
         * Decoupling between classes.
         * Realtime updates.
         * Better for system with massive number of users like ours.
+4. Facade Pattern
+    -   *Objective: To simplify the process from photo image path to HTTP request and from retrieving JSON data via the API to further processing, and to make it repeatable.*
+    -   *Code Locations: defined in*
+        -   Class [PlantIdentification](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/PlantIdentification.java?ref_type=heads)
+    -   *Reasons:*
+        -   Code maintainability: The process from the captured photo path to obtaining usable data is too complex, and there are no additional local variables involved in the process. To simplify this and facilitate the maintenance of other code, we encapsulate the entire process into a single class.
+        -   Thread Safety: Since API calls rely on external servers, the overall performance is unstable. Encapsulating these calls separately and establishing them on an independent thread will help ensure the security of the runtime environment.
+        -   Scalability: Due to the presence of various data types in the app, each requiring different API calls (such as plant identification, retrieving detailed content descriptions, obtaining related images, etc.), this design pattern can provide functional scalability for other calls.
 
 <hr>
 
@@ -380,7 +388,7 @@ Additionally, when users post threads, we similarly tokenize their textual input
    * User will get notification both as system notification and UI updates.
    <br>
 5. [Search]. (medium)
-    -   Code: Class Token, Class Tokenizer, Class SearchGrammarParser, Class ParserEventHandler
+    -   Code: Class [Token](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/Token.java?ref_type=heads), Class [Tokenizer](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/Tokenizer.java?ref_type=heads), Class [SearchGrammarParser](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/SearchGrammarParser.java?ref_type=heads), Class [ParserEventHandler](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/ParserEventHandler.java?ref_type=heads)
     -   Users can search for two types of objects, "Plant" and "Post," using a switch. Depending on the currently selected object, when the app performs a syntax-based search, it will generate a corresponding result list based on the search logic and display it on the page for users to view in detail.
     -   When a user inputs a search query, the program first tokenizes the input and then interprets the specific logical content of the syntax (by Class Tokenizer, Class Token). 
     -   At this stage, the backend of the app obtains a reference table of the search content derived from the syntax and the search method (e.g., "AND", "OR") (by Class ParserEventHandler, Class SearchGrammarParser). 
