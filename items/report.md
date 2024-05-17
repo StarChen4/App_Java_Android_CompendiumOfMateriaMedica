@@ -104,6 +104,7 @@ Note that the core criteria of contribution is based on `code contribution` (the
     - Factory Design Pattern -  class TreeGenerator(interface): [generateTree()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/TreeGenerator.java?ref_type=heads#L11-13), class UserTreeGenerator[generateTree()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/UserTreeGenerator.java?ref_type=heads#L20-38), class PlantTreeGenerator[generateTree()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/PostTreeGenerator.java?ref_type=heads#L27-76), class GeneratorFactory[tree()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/GeneratorFactory.java?ref_type=heads#L22-41)
     - Storage structure of data(RB-tree) - class RBTree: [RBTree.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/RBTree.java), and class RBTreeNode: [RBTreeNode.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/RBTreeNode.java)
     - Class for Wrapping Tree Operation Methods(I completed the main parts of these classes, which were later refactored by a team member into the singleton pattern.) - class UserTreeManager: [UserTreeManager.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/UserTreeManager.java), class PlantTreeManager: [PlantTreeManager.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/PlantTreeManager.java), and class PostTreeManager: [PostTreeManager.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/PostTreeManager.java)
+    - (Test)
       <br><br>
 
 - **Code and App Design**
@@ -113,7 +114,7 @@ Note that the core criteria of contribution is based on `code contribution` (the
     - <br><br>
 
 - **Others**:
-    - Report writing: *
+    - Video making, Report writing
     <br><br>
 
 3. **u7755061, Yusi Zhong**  I have 20% contribution, as follows: <br>
@@ -154,9 +155,7 @@ Note that the core criteria of contribution is based on `code contribution` (the
         - In order to prevent visual impact when users use it, I added some rounded corners, a soft and friendly visual experience. It can reduce visual impact, create a more relaxed and approachable appearance, and increase users’ willingness to interact.
     - 
     
-- **Others**: (only if significant and significantly different from an "average contribution")
-    - [Report Writing?] [Slides preparation?]*
-    - [You are welcome to provide anything that you consider as a contribution to the project or team.] e.g., APK, setups, firebase* <br><br>
+<br><br>
 
 5. **u7725171, Xing Chen**  I have 20% contribution, as follows: <br>
 - **Code Contribution in the final App**
@@ -166,7 +165,7 @@ Note that the core criteria of contribution is based on `code contribution` (the
     - Feature Interact-Noti - class [MyApp](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/MyApp.java?ref_type=heads), [NotificationService](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/NotificationService.java?ref_type=heads), [NewEvent](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/NewEvent.java?ref_type=heads), [NewEventHandler](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/NewEventHandler.java?ref_type=heads), [NotificationAdapter](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Adapters/NotificationAdapter.java?ref_type=heads), [MessagesActivity](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/ui/profile/Messages.java?ref_type=heads)
     - Feature Data-Profile, Data-Formats - class [ProfileFragment](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/ui/profile/ProfileFragment.java?ref_type=heads), [ProfilePage](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/ui/profile/ProfilePage.java?ref_type=heads), [MyPost](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/ui/profile/MyPost.java?ref_type=heads), [PlantDiscovered](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/ui/profile/PlantDiscovered.java?ref_type=heads)
     - Singleton Design Pattern - [Class PostTreeManager, methods getInstance()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/PostTreeManager.java?ref_type=heads#L18-35), [Class PlantTreeManager, methods getInstance()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/PlantTreeManager.java?ref_type=heads#L21-32), [Class UserTreeManager, methods getInstance()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/UserTreeManager.java?ref_type=heads#L21-32), [Class NewEventHandler, methods getInstance()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/NewEventHandler.java?ref_type=heads#L24-35)
-    - Observer Design Pattern - class NewEventHandler, MainActivity, ProfileFragment
+    - Observer Design Pattern - class [NewEventHandler](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/NewEventHandler.java?ref_type=heads), MainActivity, ProfileFragment
     - Camera use - class CaptureFragment
     - ImageLoader function
     - Some getter function
@@ -179,10 +178,7 @@ Note that the core criteria of contribution is based on `code contribution` (the
         - User can get notification anywhere during the app is running. This will be more user-friendly.
     - UI design
         - Show user level in profile page to give user a target to chase so that user could have momentum.
-
-- **Others**: (only if significant and significantly different from an "average contribution")
-    - [Report Writing?] [Slides preparation?]*
-    - [You are welcome to provide anything that you consider as a contribution to the project or team.] e.g., APK, setups, firebase* <br><br>
+<br><br>
 
 
 ## Application Description
@@ -194,10 +190,12 @@ Note that the core criteria of contribution is based on `code contribution` (the
 
 *Targets Users:  People who are interested in plants or want to learn about them*
 
-* *Users can take pictures of unknown plants encountered in life through the application, and the application will return the relevant information of the plant; At the same time, the user can choose to upload the photo of the plant to the social channel to share with other users, if the plant is discovered by the user for the first time, the user will increase the energy value of plant exploration after sharing, and at the same time store the plant information in the discovery book.*
-* *Users can search for a specific plant by entering information about the plant (such as common name, etc.) to get detailed information about the plant, and the app will also provide posts posted by other users related to the plant.*
 * *Users can like their favorite posts on social channels, and the users who are liked will receive a message reminder.*
+* *Users can take pictures of unknown plants encountered in life through the application, and the application will return the relevant information of the plant; At the same time, the user can choose to upload the photo of the plant to the social channel to share with other users, if the plant is discovered by the user for the first time, the user will increase the energy value of plant exploration after sharing, and at the same time store the plant information in the discovery book.*
 * *Users can view their own relevant information in the profile interface, such as published posts, plant collection guides, and plant exploration energy values.*
+* *Users can search for a specific plant by entering information about the plant (such as common name, etc.) to get detailed information about the plant, and the app will also provide posts posted by other users related to the plant.*
+* *When users clicks on the image of a plant from the search results, they can enter the plant's detail display page, which includes the plant's official image and detailed information.*
+
   <br>
 
 *Use Case Diagram:*
@@ -208,8 +206,8 @@ Note that the core criteria of contribution is based on `code contribution` (the
 
 ### Application UML
 
-![ClassDiagramExample](media/_examples/ClassDiagramExample.png) <br>
-*[Replace the above with a class diagram. You can look at how we have linked an image here as an example of how you can do it too.]*
+![UML](media/_examples/UML.png) <br>
+*The diagram was created using draw.io, and you can view it in larger format through browser: [View Diagram](https://drive.google.com/file/d/1qsRLrss10_gt_6LMhFmzewHxQ9l8EJ-q/view?usp=sharing).*
 
 <hr>
 
@@ -282,15 +280,20 @@ Note that the core criteria of contribution is based on `code contribution` (the
 3. *Observer Pattern*
     * *Objective: Enable user to get notification when user's posts are liked by others. We also use this in some UI updating case.*
     * *Code Locations: defined in*
-        * Class NewEventHandler
-        * Class
+        * Class [NewEventHandler](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/NewEventHandler.java?ref_type=heads)
     * *Reasons:*
         * Our app is a social app so user will be interested in other user's action and reaction.
         * Decoupling between classes.
         * Realtime updates.
         * Better for system with massive number of users like ours.
 4. Facade Pattern
-    -   
+    -   *Objective: To simplify the process from photo image path to HTTP request and from retrieving JSON data via the API to further processing, and to make it repeatable.*
+    -   *Code Locations: defined in*
+        -   Class [PlantIdentification](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/PlantIdentification.java?ref_type=heads)
+    -   *Reasons:*
+        -   Code maintainability: The process from the captured photo path to obtaining usable data is too complex, and there are no additional local variables involved in the process. To simplify this and facilitate the maintenance of other code, we encapsulate the entire process into a single class.
+        -   Thread Safety: Since API calls rely on external servers, the overall performance is unstable. Encapsulating these calls separately and establishing them on an independent thread will help ensure the security of the runtime environment.
+        -   Scalability: Due to the presence of various data types in the app, each requiring different API calls (such as plant identification, retrieving detailed content descriptions, obtaining related images, etc.), this design pattern can provide functional scalability for other calls.
 
 <hr>
 
@@ -355,17 +358,12 @@ When users input incorrect tokens or syntax, we can also isolate the content cor
 
 Additionally, when users post threads, we similarly tokenize their textual inputs. This enables quick identification of user-entered keywords, allowing us to rapidly implement a sensitive word filtering function to effectively block inappropriate content. To facilitate other users' efficient search for thread content, we tokenize threads and search for keywords one by one. This processing approach makes search methods more efficient and faster.
 
-### Others
-
-*[What other design decisions have you made which you feel are relevant? Feel free to separate these into their own subheadings.]*
 
 <br>
 
 <hr>
 
 ## Implemented Features
-*[What features have you implemented? where, how, and why?]* <br>
-*List all features you have completed in their separate categories with their featureId. THe features must be one of the basic/custom features, or an approved feature from Voice Four Feature.*
 
 ### Basic Features
 1. [LogIn]. Users must be able to log in (not necessarily sign up).  (easy)
@@ -384,7 +382,7 @@ Additionally, when users post threads, we similarly tokenize their textual input
     * The page will search for the plant in the generated plantTree based on the plant id passed in, and add the relevant attributes of the plant instance to the textView of the page.
 
 4. [DataStream]. After a user logs in, a background service periodically generates events where random users like the current app user's post. The user can see notifications of new events and handle them. (medium)
-   * Code: NotificationService.java
+   * Code: [NotificationService.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/NotificationService.java?ref_type=heads)
    * The service will generate a new event representing other user's like action periodically.
    * The service will also simulate other user sharing posts, reading post information from json.
    * The social page can do real-time update when someone share a new post.
@@ -392,7 +390,7 @@ Additionally, when users post threads, we similarly tokenize their textual input
    * User will get notification both as system notification and UI updates.
    <br>
 5. [Search]. (medium)
-    -   Code: Class Token, Class Tokenizer, Class SearchGrammarParser, Class ParserEventHandler
+    -   Code: Class [Token](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/Token.java?ref_type=heads), Class [Tokenizer](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/Tokenizer.java?ref_type=heads), Class [SearchGrammarParser](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/SearchGrammarParser.java?ref_type=heads), Class [ParserEventHandler](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/ParserEventHandler.java?ref_type=heads)
     -   Users can search for two types of objects, "Plant" and "Post," using a switch. Depending on the currently selected object, when the app performs a syntax-based search, it will generate a corresponding result list based on the search logic and display it on the page for users to view in detail.
     -   When a user inputs a search query, the program first tokenizes the input and then interprets the specific logical content of the syntax (by Class Tokenizer, Class Token). 
     -   At this stage, the backend of the app obtains a reference table of the search content derived from the syntax and the search method (e.g., "AND", "OR") (by Class ParserEventHandler, Class SearchGrammarParser). 
@@ -404,7 +402,6 @@ Feature Category: Firebase Integration <br>
 1. [FB-Auth]. Implemented Firebase Authentication for secure user login and management. Users authenticate using their email and password. (easy)
     * Code: [LoginAuth.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Firebase/LoginAuth.java), [LoginViewModel](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/LoginViewModel.java)
     * The LoginAuth class handles user authentication, while the LoginActivity class manages user login UI and interaction. Upon successful authentication, users are redirected to the main activity of the application.
-
 
 Feature Category: User Interactivity <br>
 2. [Interact-Micro] User can like other users' posts by clicking the like button. (easy)
@@ -440,7 +437,7 @@ Feature Category: Greater Data Usage, Handling and Sophistication <br>
     * The share post page uses Geocoder to get the current latitude and longitude, which are then sent to the server to request the address.
 
 Feature Category: Search-related features
-1.  [Search-Invalid] The app will correct user typos to a certain extent and continue the search based on the corrected input.
+8. [Search-Invalid] The app will correct user typos to a certain extent and continue the search based on the corrected input. (medium)
     -   Code: Class ParserEventHandler, method [getSearchedResultsFromParameters()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/ParserEventHandler.java?ref_type=heads#L32-107), [getSearchedResultsFromBlurParameter()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/ParserEventHandler.java?ref_type=heads#L110-165), [calculateStringSimilarity()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/ParserEventHandler.java?ref_type=heads#L230-273)
     -   When performing a search, if the user's input contains a specific term that is not found in the data, the program will automatically conduct a similar term search. It will then use the term with the highest similarity which similarity is larger than 0.5 to the original term as the key for a new search. If no similar term is found, the current search will be skipped.
 
@@ -571,9 +568,6 @@ Feature Category: Search-related features
 ## Team Management
 
 ### Meetings Records
-* Link to the minutes of your meetings like above. There must be at least 4 team meetings.
-  (each commited within 2 days aftre the meeting)
-* Your meetings should also have a reasonable date spanning across Week 6 to 11.*
 
 - *[Team Meeting 1](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/items/meeting-1.md)*
 - *[Team Meeting 2](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/items/meeting-2.md)*
@@ -583,10 +577,6 @@ Feature Category: Search-related features
 <hr>
 
 ### Conflict Resolution Protocol
-*[Write a well defined protocol your team can use to handle conflicts. That is, if your group has problems, what is the procedure for reaching consensus or solving a problem?
-(If you choose to make this an external document, link to it here)]*
-
-This shall include an agreed procedure for situations including (but not limited to):
 <br><br>
 1. Failure to Meet Initial Plan or Deadlines：
 - Schedule weekly progress meetings to review the status of each member's tasks.
