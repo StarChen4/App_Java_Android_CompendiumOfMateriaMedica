@@ -368,10 +368,10 @@ Additionally, when users post threads, we similarly tokenize their textual input
 *List all features you have completed in their separate categories with their featureId. THe features must be one of the basic/custom features, or an approved feature from Voice Four Feature.*
 
 ### Basic Features
-1. [LogIn]. Description of the feature ... (easy)
-    * Code: [Class X, methods Z, Y](https://gitlab.cecs.anu.edu.au/comp2100/group-project/ga-23s2/-/blob/main/items/media/_examples/Dummy.java#L22-43) and Class Y, ...
-    * Description of feature: ... <br>
-    * Description of your implementation: ... <br>
+1. [LogIn]. Users must be able to log in (not necessarily sign up).  (easy)
+    * Code: class LoginActivity: [LoginActivity.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/LoginActivity.java)
+    * This page is for user to log into the application.
+    * The page will prompt the user to enter the email and password in the corresponding input area, and then the data obtained will be compared with the data inside the RB tree structure for all users' information, prompting "Login successful" if the data is matched and entry into the app with passing the information of the current user, or prompting the user to "Invalid email or password" if the data is not matched.
 
 2. [DataFiles]. Create at least 2500 valid data instances. (easy)
     * Code to the Data File [posts.json](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/res/raw/posts.json), [plants.json](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/res/raw/plants.json), [users.json](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/res/raw/users.json), [posts_stream.json](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/res/raw/posts_stream.json)
