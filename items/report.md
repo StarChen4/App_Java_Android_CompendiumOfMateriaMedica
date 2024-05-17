@@ -113,7 +113,7 @@ Note that the core criteria of contribution is based on `code contribution` (the
     - <br><br>
 
 - **Others**:
-    - Report writing: *
+    - Video making, Report writing
     <br><br>
 
 3. **u7755061, Yusi Zhong**  I have 20% contribution, as follows: <br>
