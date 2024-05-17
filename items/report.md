@@ -104,6 +104,7 @@ Note that the core criteria of contribution is based on `code contribution` (the
     - Factory Design Pattern -  class TreeGenerator(interface): [generateTree()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/TreeGenerator.java?ref_type=heads#L11-13), class UserTreeGenerator[generateTree()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/UserTreeGenerator.java?ref_type=heads#L20-38), class PlantTreeGenerator[generateTree()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/PostTreeGenerator.java?ref_type=heads#L27-76), class GeneratorFactory[tree()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/GeneratorFactory.java?ref_type=heads#L22-41)
     - Storage structure of data(RB-tree) - class RBTree: [RBTree.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/RBTree.java), and class RBTreeNode: [RBTreeNode.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/RBTreeNode.java)
     - Class for Wrapping Tree Operation Methods(I completed the main parts of these classes, which were later refactored by a team member into the singleton pattern.) - class UserTreeManager: [UserTreeManager.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/UserTreeManager.java), class PlantTreeManager: [PlantTreeManager.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/PlantTreeManager.java), and class PostTreeManager: [PostTreeManager.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/PostTreeManager.java)
+    - (Test)
       <br><br>
 
 - **Code and App Design**
@@ -113,7 +114,7 @@ Note that the core criteria of contribution is based on `code contribution` (the
     - <br><br>
 
 - **Others**:
-    - Report writing: *
+    - Video making, Report writing
     <br><br>
 
 3. **u7755061, Yusi Zhong**  I have 20% contribution, as follows: <br>
@@ -154,9 +155,7 @@ Note that the core criteria of contribution is based on `code contribution` (the
         - In order to prevent visual impact when users use it, I added some rounded corners, a soft and friendly visual experience. It can reduce visual impact, create a more relaxed and approachable appearance, and increase users’ willingness to interact.
     - 
     
-- **Others**: (only if significant and significantly different from an "average contribution")
-    - [Report Writing?] [Slides preparation?]*
-    - [You are welcome to provide anything that you consider as a contribution to the project or team.] e.g., APK, setups, firebase* <br><br>
+<br><br>
 
 5. **u7725171, Xing Chen**  I have 20% contribution, as follows: <br>
 - **Code Contribution in the final App**
@@ -179,10 +178,7 @@ Note that the core criteria of contribution is based on `code contribution` (the
         - User can get notification anywhere during the app is running. This will be more user-friendly.
     - UI design
         - Show user level in profile page to give user a target to chase so that user could have momentum.
-
-- **Others**: (only if significant and significantly different from an "average contribution")
-    - [Report Writing?] [Slides preparation?]*
-    - [You are welcome to provide anything that you consider as a contribution to the project or team.] e.g., APK, setups, firebase* <br><br>
+<br><br>
 
 
 ## Application Description
@@ -289,7 +285,13 @@ Note that the core criteria of contribution is based on `code contribution` (the
         * Realtime updates.
         * Better for system with massive number of users like ours.
 4. Facade Pattern
-    -   
+    -   *Objective: To simplify the process from photo image path to HTTP request and from retrieving JSON data via the API to further processing, and to make it repeatable.*
+    -   *Code Locations: defined in*
+        -   Class [PlantIdentification](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/PlantIdentification.java?ref_type=heads)
+    -   *Reasons:*
+        -   Code maintainability: The process from the captured photo path to obtaining usable data is too complex, and there are no additional local variables involved in the process. To simplify this and facilitate the maintenance of other code, we encapsulate the entire process into a single class.
+        -   Thread Safety: Since API calls rely on external servers, the overall performance is unstable. Encapsulating these calls separately and establishing them on an independent thread will help ensure the security of the runtime environment.
+        -   Scalability: Due to the presence of various data types in the app, each requiring different API calls (such as plant identification, retrieving detailed content descriptions, obtaining related images, etc.), this design pattern can provide functional scalability for other calls.
 
 <hr>
 
@@ -354,17 +356,12 @@ When users input incorrect tokens or syntax, we can also isolate the content cor
 
 Additionally, when users post threads, we similarly tokenize their textual inputs. This enables quick identification of user-entered keywords, allowing us to rapidly implement a sensitive word filtering function to effectively block inappropriate content. To facilitate other users' efficient search for thread content, we tokenize threads and search for keywords one by one. This processing approach makes search methods more efficient and faster.
 
-### Others
-
-*[What other design decisions have you made which you feel are relevant? Feel free to separate these into their own subheadings.]*
 
 <br>
 
 <hr>
 
 ## Implemented Features
-*[What features have you implemented? where, how, and why?]* <br>
-*List all features you have completed in their separate categories with their featureId. THe features must be one of the basic/custom features, or an approved feature from Voice Four Feature.*
 
 ### Basic Features
 1. [LogIn]. Users must be able to log in (not necessarily sign up).  (easy)
@@ -564,9 +561,6 @@ Feature Category: Search-related features
 ## Team Management
 
 ### Meetings Records
-* Link to the minutes of your meetings like above. There must be at least 4 team meetings.
-  (each commited within 2 days aftre the meeting)
-* Your meetings should also have a reasonable date spanning across Week 6 to 11.*
 
 - *[Team Meeting 1](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/items/meeting-1.md)*
 - *[Team Meeting 2](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/items/meeting-2.md)*
@@ -576,10 +570,6 @@ Feature Category: Search-related features
 <hr>
 
 ### Conflict Resolution Protocol
-*[Write a well defined protocol your team can use to handle conflicts. That is, if your group has problems, what is the procedure for reaching consensus or solving a problem?
-(If you choose to make this an external document, link to it here)]*
-
-This shall include an agreed procedure for situations including (but not limited to):
 <br><br>
 1. Failure to Meet Initial Plan or Deadlines：
 - Schedule weekly progress meetings to review the status of each member's tasks.
