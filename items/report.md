@@ -76,10 +76,10 @@ Note that the core criteria of contribution is based on `code contribution` (the
 - **Code and App Design**
     - Code refactoring: 
         - Refactoring of partial Java code, to improve the quality, extensibility of the codebase while preserving its functionality and compatibility with existing systems the code by the way of:
-            1. Code Cleanup: Removing unused variables, imports, and dead code to improve readability and reduce clutter.
-            2. Improving Code Structure: Reorganizing classes, methods, and files to follow better design patterns and coding conventions.
-            3. Enhancing Comments and Documentation: Adding or improving comments to explain logic and algorithms, making the code easier to understand for other team members.
-            4. Simplifying Complex Code: Breaking down long methods or classes into smaller, more manageable components to improve readability and maintainability.
+            1. Code Cleanup: Removing unused variables, imports, and dead code.
+            2. Improving Code Structure: Reorganizing classes, methods and attributes.
+            3. Enhancing Comments and Documentation: Adding or improving comments to explain logic and algorithms.
+            4. Simplifying Complex Code: Breaking down long methods or classes into smaller, more manageable components.
       
         - Layout adjustment of all pages, to make the application more visually appealing, intuitive, and user-friendly by the way of:
             1. Justifying components: Changing the position, size and color of the components.
@@ -477,6 +477,11 @@ Feature Category: Search-related features
     - ...
 
 2. *Bug 2:*
+    - *'Surpise Avater Change' sometimes may be failed to get image and get the exception 'GlideException: Failed to load resource'.*
+    - *It may be caused by the issue with Glide. The error message indicates that there's a problem fetching data from a remote source, and it's likely due to a connection issue or a timeout*
+    - *Firstly, I tried to check the network connection of the virtual device and ensure the internet connection works properly.*
+    - *After that, I adjusted the timeout settings in Glide to give it more time to fetch the resource, by setting custom RequestOptions to adjust the timeout values (30000 millisecond)* 
+    - *Although after all these attempts, this bug rarely happens, but it can still be caused by the web server problem of the target website.*
 3. ...
 
 <br> <hr>
