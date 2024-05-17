@@ -148,7 +148,7 @@ The key area(s) of responsibilities for each member
     - Camera use - class CaptureFragment
     - ImageLoader function
     - Some getter function
-    -
+  
 
 - **Code and App Design**
     - Singleton Design Pattern
@@ -458,10 +458,6 @@ Feature Category: Search-related features
 
 ## Summary of Known Errors and Bugs
 
-*[Where are the known errors and bugs? What consequences might they lead to?]*
-*List all the known errors and bugs here. If we find bugs/errors that your team does not know of, it shows that your testing is not thorough.*
-
-*Here is an example:*
 
 1. *Bug 1:*
     -   Note that this issue only occurs on the test device (Xiaomi 13); it is not present on the emulator.
@@ -571,9 +567,6 @@ Feature Category: Search-related features
 <hr>
 
 ### Conflict Resolution Protocol
-*[Write a well defined protocol your team can use to handle conflicts. That is, if your group has problems, what is the procedure for reaching consensus or solving a problem?
-(If you choose to make this an external document, link to it here)]*
-
 This shall include an agreed procedure for situations including (but not limited to):
 <br><br>
 1. Failure to Meet Initial Plan or Deadlines：
