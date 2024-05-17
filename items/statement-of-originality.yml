@@ -41,10 +41,21 @@ code:
 # add as many "url+licence+comment" entries as necessary
 # (or remove it altogether if you haven't used any external assets)
 assets:
-  # NOTE: "Bliss" is just here as an example, you SHOULD REMOVE IT
-  - comment: "_Bliss_ by Charles O'Rear"
-    url: https://en.wikipedia.org/wiki/Bliss_(image)
+  - comment: "Plant description sourced from Wikipedia"
+    url: "https://en.wikipedia.org"
     licence: fair use
+
+  - comment: "Plant data sourced from Trefle.io"
+    url: "https://trefle.io"
+    licence: fair use
+
+  - comment: "Random photos sourced from picsum.photos"
+    url: "https://picsum.photos"
+    licence: Free for commercial and noncommercial use
+
+  - comment: "Avatar images sourced from robohash.org"
+    url: "https://robohash.org"
+    licence: Free for commercial and noncommercial use
 
 
 ### Questions (answer before final submission):
