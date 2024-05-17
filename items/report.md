@@ -76,10 +76,10 @@ Note that the core criteria of contribution is based on `code contribution` (the
 - **Code and App Design**
     - Code refactoring: 
         - Refactoring of partial Java code, to improve the quality, extensibility of the codebase while preserving its functionality and compatibility with existing systems the code by the way of:
-            1. Code Cleanup: Removing unused variables, imports, and dead code to improve readability and reduce clutter.
-            2. Improving Code Structure: Reorganizing classes, methods, and files to follow better design patterns and coding conventions.
-            3. Enhancing Comments and Documentation: Adding or improving comments to explain logic and algorithms, making the code easier to understand for other team members.
-            4. Simplifying Complex Code: Breaking down long methods or classes into smaller, more manageable components to improve readability and maintainability.
+            1. Code Cleanup: Removing unused variables, imports, and dead code.
+            2. Improving Code Structure: Reorganizing classes, methods and attributes.
+            3. Enhancing Comments and Documentation: Adding or improving comments to explain logic and algorithms.
+            4. Simplifying Complex Code: Breaking down long methods or classes into smaller, more manageable components.
       
         - Layout adjustment of all pages, to make the application more visually appealing, intuitive, and user-friendly by the way of:
             1. Justifying components: Changing the position, size and color of the components.
@@ -190,10 +190,12 @@ Note that the core criteria of contribution is based on `code contribution` (the
 
 *Targets Users:  People who are interested in plants or want to learn about them*
 
-* *Users can take pictures of unknown plants encountered in life through the application, and the application will return the relevant information of the plant; At the same time, the user can choose to upload the photo of the plant to the social channel to share with other users, if the plant is discovered by the user for the first time, the user will increase the energy value of plant exploration after sharing, and at the same time store the plant information in the discovery book.*
-* *Users can search for a specific plant by entering information about the plant (such as common name, etc.) to get detailed information about the plant, and the app will also provide posts posted by other users related to the plant.*
 * *Users can like their favorite posts on social channels, and the users who are liked will receive a message reminder.*
+* *Users can take pictures of unknown plants encountered in life through the application, and the application will return the relevant information of the plant; At the same time, the user can choose to upload the photo of the plant to the social channel to share with other users, if the plant is discovered by the user for the first time, the user will increase the energy value of plant exploration after sharing, and at the same time store the plant information in the discovery book.*
 * *Users can view their own relevant information in the profile interface, such as published posts, plant collection guides, and plant exploration energy values.*
+* *Users can search for a specific plant by entering information about the plant (such as common name, etc.) to get detailed information about the plant, and the app will also provide posts posted by other users related to the plant.*
+* *When users clicks on the image of a plant from the search results, they can enter the plant's detail display page, which includes the plant's official image and detailed information.*
+
   <br>
 
 *Use Case Diagram:*
@@ -472,11 +474,16 @@ Feature Category: Search-related features
 *Here is an example:*
 
 1. *Bug 1:*
-    - *A space bar (' ') in the sign in email will crash the application.*
-    - ...
-
+    -   Note that this issue only occurs on the test device (Xiaomi 13); it is not present on the emulator.
+    -   In the app, GPS information is retrieved both in the user information section and when taking photos. However, on the test device, there's an inconsistency: when the device is reinitialized or the app is freshly installed, GPS data cannot be retrieved for the user information section, but it can be retrieved when taking photos. However, after the app has been running for some time or when it's closed and reopened, GPS data can be retrieved for the user information section, but not for taking photos.
+    -   We found that the method used for the user information section is Geocoder, while for retrieving GPS data from photos, LocationManager is used. Geocoder primarily retrieves detailed address information from the server based on current latitude and longitude. Therefore, we speculate that the issue may arise because Geocoder is still waiting for the server response when the app is freshly installed, causing it to fail to display.
+    -   As for LocationManager, we can only speculate that there might be conflicts due to system versions or architecture differences.
 2. *Bug 2:*
-3. ...
+    - *'Surpise Avater Change' sometimes may be failed to get image and get the exception 'GlideException: Failed to load resource'.*
+    - *It may be caused by the issue with Glide. The error message indicates that there's a problem fetching data from a remote source, and it's likely due to a connection issue or a timeout*
+    - *Firstly, I tried to check the network connection of the virtual device and ensure the internet connection works properly.*
+    - *After that, I adjusted the timeout settings in Glide to give it more time to fetch the resource, by setting custom RequestOptions to adjust the timeout values (30000 millisecond)* 
+    - *Although after all these attempts, this bug rarely happens, but it can still be caused by the web server problem of the target website.*
 
 <br> <hr>
 
