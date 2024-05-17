@@ -36,7 +36,7 @@ The team agreed upon the app's probably features, which will include:
 - **Social Community Sharing**: for users to share experiences and knowledge. (subscription option).<br>
 
 The skeleton diagram:
-![skeleton.png](skeleton.png)
+![skeleton.png](media/Design/skeleton.png)
 
 ### [Project Database]
 The database is structured to support the primary functions of the app with the following tables:
@@ -73,7 +73,7 @@ Holds records of community posts.<br>
 | ImageURL    | VARCHAR(255) | URL to the user-uploaded image           |
 
 It can be scaled or modified depending on future needs.
-![database.png](database.png)
+![database.png](media/Design/database.png)
 
 ### [Project Timeline]
 #### Week 8: Checkpoint 1
