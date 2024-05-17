@@ -80,7 +80,7 @@ Note that the core criteria of contribution is based on `code contribution` (the
             2. Improving Code Structure: Reorganizing classes, methods and attributes.
             3. Enhancing Comments and Documentation: Adding or improving comments to explain logic and algorithms.
             4. Simplifying Complex Code: Breaking down long methods or classes into smaller, more manageable components.
-      
+        
         - Layout adjustment of all pages, to make the application more visually appealing, intuitive, and user-friendly by the way of:
             1. Justifying components: Changing the position, size and color of the components.
             2. Adding missing components: The 'back button' and some other reasonable components for each page and the jump logic behind them.
@@ -136,13 +136,20 @@ Note that the core criteria of contribution is based on `code contribution` (the
 4. **u7733037, Hongjun Xu**  I have 20% contribution, as follows: <br>
 - **Code Contribution in the final App**
     - Feature [Search] - class [CaptureFragment](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/ui/capture/CaptureFragment.java?ref_type=heads), class [SearchGrammarParser](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/SearchGrammarParser.java?ref_type=heads), class [Token](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/Token.java?ref_type=heads), class [Tokenizer](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/Tokenizer.java?ref_type=heads), class [ParserEventHandler](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/ParserEventHandler.java?ref_type=heads), class [SearchedResults](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/SearchedResults.java?ref_type=heads)
+    
     - Feature [Search-Invalid] - class ParserEventHandler: [getSearchedResultsFromParameters()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/ParserEventHandler.java?ref_type=heads#L42-107), [getSearchedResultsFromBlurParameter()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/ParserEventHandler.java?ref_type=heads#L110-165)
+    
     - Facade Design Pattern - class PlantIdentification: [getPlantNetAPIResult()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/PlantIdentification.java?ref_type=heads#L97-180), [getPlantNetAPIResultOKHttp()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/PlantIdentification.java?ref_type=heads#L181-234), [getFromWiki()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/PlantIdentification.java?ref_type=heads#L236-296)
+    
     - Singleton Design Pattern - class [GeneralFunctions](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/GeneralFunctions.java?ref_type=heads)
+    
     - HTTP API Request - class [PlantIdentification](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/1f8a3be3ebc86774e2ecec58f6e8a85b45f3914e/src/app/src/main/java/model/Plant_Identification.java)
+    
     - Some APP recyclerviewAdapters functions
+    
     - Some getter function in TreeManagers
-    - (Test)
+    
+        <br><br>
     
 - **Code and App Design**
     - Data structure - RBTree
@@ -153,8 +160,8 @@ Note that the core criteria of contribution is based on `code contribution` (the
         - To facilitate the collaborative design and discussion of team projects, we tried to use the online design tool "Miro" to interact and determine the general appearance of the APP UI.
     - UI Design - Rounded Corners
         - In order to prevent visual impact when users use it, I added some rounded corners, a soft and friendly visual experience. It can reduce visual impact, create a more relaxed and approachable appearance, and increase users’ willingness to interact.
-    - 
     
+
 <br><br>
 
 5. **u7725171, Xing Chen**  I have 20% contribution, as follows: <br>
@@ -178,7 +185,7 @@ Note that the core criteria of contribution is based on `code contribution` (the
         - User can get notification anywhere during the app is running. This will be more user-friendly.
     - UI design
         - Show user level in profile page to give user a target to chase so that user could have momentum.
-<br><br>
+        <br><br>
 
 
 ## Application Description
