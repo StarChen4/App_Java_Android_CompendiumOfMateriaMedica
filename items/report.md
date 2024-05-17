@@ -451,8 +451,13 @@ Feature Category: Search-related features
 <hr>
 
 ### Surprise Features
+1. [4 code smells in our code, 4 solved]
+  - [Sharing Data in the App] Multiple instances of TreeManagers making it hard to synchronize data across the app.
+  - [Odd Return Type]Strange return type of some method like search() which could return a List of value but gave a List of Node instead. 
+  - [Poor Time Efficiency] A ‘stupid’ search method that find the newest posts of given uid is too time-consuming because it parses Strings into timestamp and then compare them, which was not necessary. 
+  - [Bad Encapsulation] Many methods that are strongly connected to the trees and tree managers are within other activities rather than the class themselves. 
 
-1. [Using singleton Design Pattern]
+2. [Using singleton Design Pattern]
 * [Original postTreeManager.java version:cf83340f](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/cf83340f597bd48f688fb3f7a136925aef6bb5dc/src/app/src/main/java/model/PostTreeManager.java)
 * [PostTreeManager.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/PostTreeManager.java?ref_type=heads#L37-50)
   - We found that because we instantiate trees and TreeManagers in  several activities and in fact we are using the same one.
@@ -460,16 +465,22 @@ Feature Category: Search-related features
   - Thus, we apply singleton design pattern on all of this TreeManagers and use getInstance() to get the unique instance.
   - By doing this, our app requires less memory and the code is more neat and readable.
 
-2. [Refactored the return value of all search methods in all treeManager class]
+3. [Refactored the return value of all search methods in all treeManager class]
 * [Original postTreeManager.java version:cf83340f](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/cf83340f597bd48f688fb3f7a136925aef6bb5dc/src/app/src/main/java/model/PostTreeManager.java#L31-45)
 * [PostTreeManager.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/PostTreeManager.java?ref_type=heads#L63-84)
   - When checking the code, we noticed that the search method in the TreeManager class returns a list of tree nodes. This requires an extra step to call the `getValue` method on the tree nodes to obtain the actual instances, indicating incomplete encapsulation.
   - So we'll perform the operation of getting the node value earlier in the search method, thus changing the return value of all search methods from a list of nodes to a list of instances.
   - By doing this, we make it easier for the backend to make calls to the search method, increasing the readability and ease of use of the code.
 
+4. [Refactor a method to make it fast]
+  - The method getUserNewestPost() parse timestamp string into comparable time and then sort them. 
+  - Because the timestamp string are well formatted, we simply compare the string.
+  - This reduced the time costed by calling this function which will improve user experience when using the social page to view more posts.
 
-- If implemented, explain how your solution addresses the task (any detail requirements will be released with the surprise feature specifications).
-- State that "Suprised feature is not implemented" otherwise.
+5. [Encapsulation]
+  - Many methods in MainActivity and other Class are strongly related to PostTreeManager and UserTreeManager.
+  - This was not good because we have to make them static to call and some attributes would get exposed. The code was hard to read, too.
+  - We put the finders and getters of them into themselves to fix it. 
 
 <br> <hr>
 
