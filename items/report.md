@@ -80,7 +80,7 @@ Note that the core criteria of contribution is based on `code contribution` (the
             2. Improving Code Structure: Reorganizing classes, methods, and files to follow better design patterns and coding conventions.
             3. Enhancing Comments and Documentation: Adding or improving comments to explain logic and algorithms, making the code easier to understand for other team members.
             4. Simplifying Complex Code: Breaking down long methods or classes into smaller, more manageable components to improve readability and maintainability.
-      
+        
         - Layout adjustment of all pages, to make the application more visually appealing, intuitive, and user-friendly by the way of:
             1. Justifying components: Changing the position, size and color of the components.
             2. Adding missing components: The 'back button' and some other reasonable components for each page and the jump logic behind them.
@@ -134,15 +134,13 @@ Note that the core criteria of contribution is based on `code contribution` (the
 
 4. **u7733037, Hongjun Xu**  I have 20% contribution, as follows: <br>
 - **Code Contribution in the final App**
-    - Feature [Search] - class [CaptureFragment](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/ui/capture/CaptureFragment.java?ref_type=heads), class [SearchGrammarParser](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/SearchGrammarParser.java?ref_type=heads), class [Token](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/Token.java?ref_type=heads), class [Tokenizer](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/Tokenizer.java?ref_type=heads), class [ParserEventHandler](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/ParserEventHandler.java?ref_type=heads), class [SearchedResults](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/SearchedResults.java?ref_type=heads)
+    - Feature [Search] - class [CaptureFragment](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/ui/capture/CaptureFragment.java?ref_type=heads), class [Token](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/Token.java?ref_type=heads), class [Tokenizer](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/Tokenizer.java?ref_type=heads), class [ParserEventHandler](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/ParserEventHandler.java?ref_type=heads), class [SearchedResults](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/SearchedResults.java?ref_type=heads)
     - Feature [Search-Invalid] - class ParserEventHandler: [getSearchedResultsFromParameters()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/ParserEventHandler.java?ref_type=heads#L42-107), [getSearchedResultsFromBlurParameter()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Parser/ParserEventHandler.java?ref_type=heads#L110-165)
     - Facade Design Pattern - class PlantIdentification: [getPlantNetAPIResult()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/PlantIdentification.java?ref_type=heads#L97-180), [getPlantNetAPIResultOKHttp()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/PlantIdentification.java?ref_type=heads#L181-234), [getFromWiki()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/PlantIdentification.java?ref_type=heads#L236-296)
     - Singleton Design Pattern - class [GeneralFunctions](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/com/example/compendiumofmateriamedica/GeneralFunctions.java?ref_type=heads)
     - HTTP API Request - class [PlantIdentification](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/1f8a3be3ebc86774e2ecec58f6e8a85b45f3914e/src/app/src/main/java/model/Plant_Identification.java)
     - Some APP recyclerviewAdapters functions
     - Some getter function in TreeManagers
-    - (Test)
-    
 - **Code and App Design**
     - Data structure - RBTree
         - By hashing the special values in the data, new instances are re-inserted to improve the efficiency of subsequent tree searches.
@@ -153,7 +151,6 @@ Note that the core criteria of contribution is based on `code contribution` (the
     - UI Design - Rounded Corners
         - In order to prevent visual impact when users use it, I added some rounded corners, a soft and friendly visual experience. It can reduce visual impact, create a more relaxed and approachable appearance, and increase users’ willingness to interact.
     - 
-    
 - **Others**: (only if significant and significantly different from an "average contribution")
     - [Report Writing?] [Slides preparation?]*
     - [You are welcome to provide anything that you consider as a contribution to the project or team.] e.g., APK, setups, firebase* <br><br>
@@ -481,9 +478,11 @@ Feature Category: Search-related features
 1. *Bug 1:*
     - *A space bar (' ') in the sign in email will crash the application.*
     - ...
-
 2. *Bug 2:*
-3. ...
+    -   Note that this issue only occurs on the test device (Xiaomi 13); it is not present on the emulator.
+    -   In the app, GPS information is retrieved both in the user information section and when taking photos. However, on the test device, there's an inconsistency: when the device is reinitialized or the app is freshly installed, GPS data cannot be retrieved for the user information section, but it can be retrieved when taking photos. However, after the app has been running for some time or when it's closed and reopened, GPS data can be retrieved for the user information section, but not for taking photos.
+    -   We found that the method used for the user information section is Geocoder, while for retrieving GPS data from photos, LocationManager is used. Geocoder primarily retrieves detailed address information from the server based on current latitude and longitude. Therefore, we speculate that the issue may arise because Geocoder is still waiting for the server response when the app is freshly installed, causing it to fail to display.
+    -   As for LocationManager, we can only speculate that there might be conflicts due to system versions or architecture differences.
 
 <br> <hr>
 
