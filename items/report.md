@@ -265,10 +265,10 @@ Note that the core criteria of contribution is based on `code contribution` (the
 2. *Singleton Pattern*
     * *Objective: used for ensuring all components interacts with the same set of data, maintaining consistent operations such as insertions, deletions, and searches across activities.*
     * *Code Locations: defined in*
-        * [Class PostTreeManager, methods getInstance()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/PostTreeManager.java?ref_type=heads#L18-35)
-        * [Class PlantTreeManager, methods getInstance()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/PlantTreeManager.java?ref_type=heads#L21-32)
+        * [Class PostTreeManager, methods getInstance()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/PostTreeManager.java?ref_type=heads#L37-50)
+        * [Class PlantTreeManager, methods getInstance()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/PlantTreeManager.java?ref_type=heads#L25-35)
         * [Class UserTreeManager, methods getInstance()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/UserTreeManager.java?ref_type=heads#L21-32)
-        * [Class NewEventHandler, methods getInstance()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/NewEventHandler.java?ref_type=heads#L24-35)
+        * [Class NewEventHandler, methods getInstance()](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/NewEventHandler.java?ref_type=heads#L27-38)
     * *Reasons:*
         * Controlled Initialization: Guarantees managers are properly initialized with an RBTree<T> before use, preventing errors from premature use.
         * Resource Efficiency: Saves memory and processing power by preventing the creation of multiple instances of data management objects.
@@ -444,12 +444,16 @@ Feature Category: Search-related features
 ### Surprise Features
 
 1. [Using singleton Design Pattern]
+* [Original postTreeManager.java version:cf83340f](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/cf83340f597bd48f688fb3f7a136925aef6bb5dc/src/app/src/main/java/model/PostTreeManager.java)
+* [PostTreeManager.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/PostTreeManager.java?ref_type=heads#L37-50)
   - We found that because we instantiate trees and TreeManagers in  several activities and in fact we are using the same one.
   - This requires more memory and is hard for activities to synchronize data.
   - Thus, we apply singleton design pattern on all of this TreeManagers and use getInstance() to get the unique instance.
   - By doing this, our app requires less memory and the code is more neat and readable.
 
 2. [Refactored the return value of all search methods in all treeManager class]
+* [Original postTreeManager.java version:cf83340f](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/cf83340f597bd48f688fb3f7a136925aef6bb5dc/src/app/src/main/java/model/PostTreeManager.java#L31-45)
+* [PostTreeManager.java](https://gitlab.cecs.anu.edu.au/u7733037/gp-24s1/-/blob/main/src/app/src/main/java/model/Datastructure/PostTreeManager.java?ref_type=heads#L63-84)
   - When checking the code, we noticed that the search method in the TreeManager class returns a list of tree nodes. This requires an extra step to call the `getValue` method on the tree nodes to obtain the actual instances, indicating incomplete encapsulation.
   - So we'll perform the operation of getting the node value earlier in the search method, thus changing the return value of all search methods from a list of nodes to a list of instances.
   - By doing this, we make it easier for the backend to make calls to the search method, increasing the readability and ease of use of the code.
@@ -570,6 +574,10 @@ Feature Category: Search-related features
 <hr>
 
 ### Conflict Resolution Protocol
+*[Write a well defined protocol your team can use to handle conflicts. That is, if your group has problems, what is the procedure for reaching consensus or solving a problem?
+(If you choose to make this an external document, link to it here)]*
+
+This shall include an agreed procedure for situations including (but not limited to):
 <br><br>
 1. Failure to Meet Initial Plan or Deadlines：
 - Schedule weekly progress meetings to review the status of each member's tasks.
