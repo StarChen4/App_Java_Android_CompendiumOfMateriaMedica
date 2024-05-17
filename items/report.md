@@ -190,10 +190,12 @@ Note that the core criteria of contribution is based on `code contribution` (the
 
 *Targets Users:  People who are interested in plants or want to learn about them*
 
-* *Users can take pictures of unknown plants encountered in life through the application, and the application will return the relevant information of the plant; At the same time, the user can choose to upload the photo of the plant to the social channel to share with other users, if the plant is discovered by the user for the first time, the user will increase the energy value of plant exploration after sharing, and at the same time store the plant information in the discovery book.*
-* *Users can search for a specific plant by entering information about the plant (such as common name, etc.) to get detailed information about the plant, and the app will also provide posts posted by other users related to the plant.*
 * *Users can like their favorite posts on social channels, and the users who are liked will receive a message reminder.*
+* *Users can take pictures of unknown plants encountered in life through the application, and the application will return the relevant information of the plant; At the same time, the user can choose to upload the photo of the plant to the social channel to share with other users, if the plant is discovered by the user for the first time, the user will increase the energy value of plant exploration after sharing, and at the same time store the plant information in the discovery book.*
 * *Users can view their own relevant information in the profile interface, such as published posts, plant collection guides, and plant exploration energy values.*
+* *Users can search for a specific plant by entering information about the plant (such as common name, etc.) to get detailed information about the plant, and the app will also provide posts posted by other users related to the plant.*
+* *When users clicks on the image of a plant from the search results, they can enter the plant's detail display page, which includes the plant's official image and detailed information.*
+
   <br>
 
 *Use Case Diagram:*
