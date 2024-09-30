@@ -1,12 +1,4 @@
-# Instructions
-- One member of your group should `fork` this repository, add all the members to the repository and set it as private.
-  > The forked repository will be where you continuously update your progress, and
-  submit the major part of the project to.
-  Include the link to your repository in group registration on Wattle.
-- Some template files are provided in the `items` [folder](./items). Please place all your documents including report, meeting minutes, your APK, etc. in this folder, while
-- your Android project should be in another folder with proper folder structures and naming.
+This ia a app developed with Android, Java
+![picture 1](3e48bfcbca156ec4eb45766139632c1.png)![picture 1](58261e38e8270dd0ead6f9a30112b68.png)![picture 1](58f989b29659a47a4653ce557f53926.png)![picture 1](76bcd390fe2f6bfffb29f1b40c99e8a.png)
 
-Please refer to the `assignment specification` for detailed instructions.
-- you are encouraged to update [report.md](./items/report.md) incrementally as the project progress. 
-- You may also use [checklist.md](./items/checklist.md) for a Quick check.
-- You must ensure the link to your repo is correct on the `Wattle Group Registration Page`.
+
